@@ -1,17 +1,98 @@
 /*****Contact Form ******/
-
-
-
+//create function to tell if button was clicked  name value
 function clickHandler(event) {
-  console.log('Button Clicked');
+  //log button clicked
+  console.log(`button clicked`)
+  //select name value input field and log it
+  let nameValue = document.getElementById("validationDefault01").value;
+  console.log(nameValue)
 }
 
-let nameButtonClick = (event) => {
-  console.log("Name is")
+
+let submitButton = document.getElementById("submitButton");
+submitButton.addEventListener('click', clickHandler)
+
+
+/********US States Drop List********/
+//create array of US states and abbreviations 
+var usStates = [
+  { name: 'ALABAMA', abbreviation: 'AL'},
+  { name: 'ALASKA', abbreviation: 'AK'},
+  { name: 'AMERICAN SAMOA', abbreviation: 'AS'},
+  { name: 'ARIZONA', abbreviation: 'AZ'},
+  { name: 'ARKANSAS', abbreviation: 'AR'},
+  { name: 'CALIFORNIA', abbreviation: 'CA'},
+  { name: 'COLORADO', abbreviation: 'CO'},
+  { name: 'CONNECTICUT', abbreviation: 'CT'},
+  { name: 'DELAWARE', abbreviation: 'DE'},
+  { name: 'DISTRICT OF COLUMBIA', abbreviation: 'DC'},
+  { name: 'FEDERATED STATES OF MICRONESIA', abbreviation: 'FM'},
+  { name: 'FLORIDA', abbreviation: 'FL'},
+  { name: 'GEORGIA', abbreviation: 'GA'},
+  { name: 'GUAM', abbreviation: 'GU'},
+  { name: 'HAWAII', abbreviation: 'HI'},
+  { name: 'IDAHO', abbreviation: 'ID'},
+  { name: 'ILLINOIS', abbreviation: 'IL'},
+  { name: 'INDIANA', abbreviation: 'IN'},
+  { name: 'IOWA', abbreviation: 'IA'},
+  { name: 'KANSAS', abbreviation: 'KS'},
+  { name: 'KENTUCKY', abbreviation: 'KY'},
+  { name: 'LOUISIANA', abbreviation: 'LA'},
+  { name: 'MAINE', abbreviation: 'ME'},
+  { name: 'MARSHALL ISLANDS', abbreviation: 'MH'},
+  { name: 'MARYLAND', abbreviation: 'MD'},
+  { name: 'MASSACHUSETTS', abbreviation: 'MA'},
+  { name: 'MICHIGAN', abbreviation: 'MI'},
+  { name: 'MINNESOTA', abbreviation: 'MN'},
+  { name: 'MISSISSIPPI', abbreviation: 'MS'},
+  { name: 'MISSOURI', abbreviation: 'MO'},
+  { name: 'MONTANA', abbreviation: 'MT'},
+  { name: 'NEBRASKA', abbreviation: 'NE'},
+  { name: 'NEVADA', abbreviation: 'NV'},
+  { name: 'NEW HAMPSHIRE', abbreviation: 'NH'},
+  { name: 'NEW JERSEY', abbreviation: 'NJ'},
+  { name: 'NEW MEXICO', abbreviation: 'NM'},
+  { name: 'NEW YORK', abbreviation: 'NY'},
+  { name: 'NORTH CAROLINA', abbreviation: 'NC'},
+  { name: 'NORTH DAKOTA', abbreviation: 'ND'},
+  { name: 'NORTHERN MARIANA ISLANDS', abbreviation: 'MP'},
+  { name: 'OHIO', abbreviation: 'OH'},
+  { name: 'OKLAHOMA', abbreviation: 'OK'},
+  { name: 'OREGON', abbreviation: 'OR'},
+  { name: 'PALAU', abbreviation: 'PW'},
+  { name: 'PENNSYLVANIA', abbreviation: 'PA'},
+  { name: 'PUERTO RICO', abbreviation: 'PR'},
+  { name: 'RHODE ISLAND', abbreviation: 'RI'},
+  { name: 'SOUTH CAROLINA', abbreviation: 'SC'},
+  { name: 'SOUTH DAKOTA', abbreviation: 'SD'},
+  { name: 'TENNESSEE', abbreviation: 'TN'},
+  { name: 'TEXAS', abbreviation: 'TX'},
+  { name: 'UTAH', abbreviation: 'UT'},
+  { name: 'VERMONT', abbreviation: 'VT'},
+  { name: 'VIRGIN ISLANDS', abbreviation: 'VI'},
+  { name: 'VIRGINIA', abbreviation: 'VA'},
+  { name: 'WASHINGTON', abbreviation: 'WA'},
+  { name: 'WEST VIRGINIA', abbreviation: 'WV'},
+  { name: 'WISCONSIN', abbreviation: 'WI'},
+  { name: 'WYOMING', abbreviation: 'WY' }
+];
+
+//create function to for state drop down
+let stateDropDownCreator = () => {
+  //iterate through the usStates array
+  for(let i = 0; i< usStates.length; i++){
+    //create option element in drop down list
+    let option = document.createElement("option");
+    //option text will be the state name and abbreviation
+    option.text = usStates[i].name;
+    //the value will be the item as the loop iterates through the list
+    option.value = i;
+    //declare select variable and set it equal to the element with state id
+    let select = document.getElementById("state");
+    //add the option element to the state element
+    select.appendChild(option);
+  }
 }
-// let nameButton = document.createElement(name)
-// let newtext = document.createTextNode(text)
-//   //newElement.appendChild(newtext)
-//   document.getElementById("divTag").appendChild(newElement)
-//   newElement.appendChild(newtext)
-//   newElement.classList.add(newClass)
+stateDropDownCreator()
+
+// ['+ usStates[i].abbreviation+']
