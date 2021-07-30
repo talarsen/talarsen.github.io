@@ -13,6 +13,7 @@ let submitButton = document.getElementById("submitButton");
 submitButton.addEventListener('click', clickHandler)
 
 
+
 /********US States Drop List********/
 //create array of US states and abbreviations 
 var usStates = [
